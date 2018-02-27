@@ -15,26 +15,11 @@
     <input class="inline" style="margin-top: 30pt;margin-left: 30px">
     <br>
   </div>
-  <!--<mt-radio-->
-    <!--:value.sync="value"-->
-    <!--:options="['男', '女' ]">-->
-  <!--</mt-radio>-->
-  <!--<div id="example-4">-->
-    <!--<input type="radio" id="one" value="One" v-model="picked">-->
-    <!--<label for="one">One</label>-->
-    <!--<br>-->
-    <!--<input type="radio" id="two" value="Two" v-model="picked">-->
-    <!--<label for="two">Two</label>-->
-    <!--<br>-->
-    <!--<span>Picked: {{ picked }}</span>-->
-  <!--</div>-->
   <div style="white-space: nowrap">
     <span style="margin-left: 30px">身份证号：</span>
     <input class="inline" style="margin-top: 30pt;">
     <br>
   </div>
-
-
   <div style="white-space: nowrap">
     <span style="margin-left: 30px">手机号：</span>
     <input class="inline" style="margin-top: 30pt;margin-left: 20px">
