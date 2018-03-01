@@ -12,17 +12,15 @@ import 'mint-ui/lib/style.css'
 import 'common/style/mycss.css'
 import axios from 'axios'
 
-fastclick.attach(document.body)
+
 Vue.config.productionTip = false
 Vue.use(Mint)
 Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({
-  store,
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>',
+  store,
   render: h => h(App)
-}).$mount('#app')
+})

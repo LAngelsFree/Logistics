@@ -2,15 +2,30 @@
 
    <div>
      <div class="title">
-       <h3 >XX物流</h3>
+       <img src="../../common/image/logo@2x.png" height="100" width="360"/>
      </div>
      <div class="login-wrap" >
-       <input type="text" placeholder="请输入用户名" v-model="username">
-       <input type="password" placeholder="请输入密码" v-model="password">
-       <input type="text" placeholder="验证码" v-model="autoCode">
-       <button v-on:click="login">登录</button>
-       <span v-on:click="ToRegister">没有账号？马上注册</span>
+       <mt-field class="userInfo" label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
+       <mt-field class="userInfo" label="密码" placeholder="请输入密码" type="password" v-model="password" :type="isRead" >
+         <mt-switch v-model="value"></mt-switch>
+       </mt-field>
+       <mt-field class="userInfo" label="验证码" placeholder="请输入验证码" v-model="captcha">
+         <img src="" height="45px" width="100px">
+       </mt-field>
+
      </div>
+
+     <div class="logonButton">
+       <mt-button type="primary" size="large">登录</mt-button>
+       <br/>
+       <mt-button type="primary" size="large">注册</mt-button>
+     </div>
+
+     <div>
+       <span class="forgotPassword">忘记密码？</span>
+     </div>
+
+
    </div>
 </template>
 
@@ -18,7 +33,7 @@
     export default {
         data () {
           return {
-
+            value:false
           }
         },
         components:{
@@ -28,6 +43,14 @@
 
         },
         computed:{
+          isRead:function(){
+            if(this.value == false){
+              return 'password';
+            }
+            else{
+              return '';
+            }
+          }
 
         },
         methods:{
@@ -37,12 +60,14 @@
 </script>
 
 <style scoped>
-.title{text-align:center;font-size:30px;;margin-top:40pt;}
+.title{font-size:30px;;margin-top:40pt;}
   .login-wrap{text-align:center;margin-top:60pt}
-  input{display:block; width:200px; height:40px; line-height:40px; margin:0 auto; margin-bottom: 10px; outline:none; border:1px solid #888; padding:10px; box-sizing:border-box;}
-  p{color:red;}
-  button{display:block; width:200px; height:40px; line-height: 40px; margin:0 auto; border:none; background-color:lightskyblue; color:#fff; font-size:16px; margin-bottom:5px;}
-  span{cursor:pointer;}
-  span:hover{color:lightskyblue;}
 
+  p{color:red;}
+  img{margin-left: auto;margin-right: auto}
+  span{cursor:pointer;}
+  span:hover{color:white;}
+  .userInfo{border-bottom: solid 1px; border-color: #dddddd}
+  .forgotPassword{position:relative;margin-top:10px;float: right;: right;color: #26a2ff;}
+  .logonButton{margin-top: 40px}
 </style>
