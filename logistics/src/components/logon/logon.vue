@@ -18,7 +18,8 @@
      <div class="logonButton">
        <mt-button type="primary" size="large">登录</mt-button>
        <br/>
-       <mt-button type="primary" size="large">注册</mt-button>
+       <mt-button type="primary" size="large" @click="send">注册</mt-button>
+
      </div>
 
      <div>
@@ -31,32 +32,33 @@
 
 <script>
     export default {
-        data () {
-          return {
-            value:false
-          }
-        },
-        components:{
-
-        },
-        mounted:function(){
-
-        },
-        computed:{
-          isRead:function(){
-            if(this.value == false){
-              return 'password';
-            }
-            else{
-              return '';
-            }
-          }
-
-        },
-        methods:{
-
+      data() {
+        return {
+          value: false
         }
+      },
+      components: {},
+      mounted: function () {
+
+      },
+      computed: {
+        isRead: function () {
+          if (this.value == false) {
+            return 'password';
+          }
+          else {
+            return '';
+          }
+        }
+
+      },
+      methods: {
+        send:function(){
+          this.$router.push('/register');
+        }
+      }
     }
+
 </script>
 
 <style scoped>
