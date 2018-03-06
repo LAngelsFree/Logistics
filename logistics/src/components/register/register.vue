@@ -1,14 +1,20 @@
 <template>
   <div>
+    <mt-header fixed>
+      <mt-button v-link="'/'" icon="back" slot="left" @click="aaa">登录</mt-button>
+    </mt-header>
     <div class="title">
-      <h3 >XX物流</h3>
+      <img src="../../common/image/logo@2x.png" height="100" width="360"/>
     </div>
-    <div class="login-wrap" >
-      <input type="text" placeholder="请输入用户名" v-model="username">
-      <input type="password" placeholder="请输入密码" v-model="password">
-      <input type="text" placeholder="手机号" v-model="telephone">
-      <input type="text" placeholder="验证码" v-model="autoCode">
-      <button v-on:click="login">注册</button>
+    <div class="register-wrap" >
+      <mt-field class="user_input" name="regname" label="账号" placeholder="用户名/邮箱/手机号" v-model="regname"></mt-field>
+      <mt-field name="regpasswd" label="密码" placeholder="请输入密码" class="user_input" v-model="regpasswd"></mt-field>
+      <mt-field name="regpasswd_ag" label="密码确认"placeholder="请再次输入密码" class="user_input" v-model="regpasswd_ag"></mt-field>
+    </div>
+    <div class="register-box">
+
+
+      <mt-button type="primary" size="large" @click="send">注册</mt-button>
 
     </div>
   </div>
@@ -16,16 +22,69 @@
 
 <script>
     export default {
-        name: "register"
+        data(){
+          return{
+            regname:'',
+            regpasswd:'',
+            regpasswd_ag:'',
+            reInfo:{}
+          }
+        },
+      methods:{
+        send(){
+          this.$router.push({path:'/car'})
+
+          // let_this=this;
+          // if(_this.regname==''){
+          //   alert('请输入手机号');
+          // }else if(_this.regpasswd==''||_this.regpasswd_ag==''){
+          //   alert('请输入密码');
+          // }else if(_this.regpasswd!==_this.regpasswd_ag){
+          //   alert('两次输入的密码不一致');
+          // }else{
+          //   _this.$http.post('/reg',{
+          //     regName:_this.regname,
+          //     regPasswd:_this.regpasswd
+          //   }).then((res)=> {
+          //     if (res.status == 200) {
+          //       _this.regInfo = res.data;
+          //       if (_this.regInfo.status == 1) {
+          //         windows.history.go(-1);
+          //       } else {
+          //         alert('注册失败');
+          //       }
+          //     } else {
+          //       alert('出现错误');
+          //     }
+          //     console.log(res);
+          //   },(err)=>{
+          //     console.log(err);
+          //
+          //   });
+          // }
+        },
+        aaa(){
+          this.$router.push({path:'/logon'})
+        }
+      }
     }
 </script>
 
 <style scoped>
-  .title{text-align:center;font-size:30px;;margin-top:40pt;}
-  .login-wrap{text-align:center;margin-top:60pt}
-  input{display:block; width:200px; height:40px; line-height:40px; margin:0 auto; margin-bottom: 10px; outline:none; border:1px solid #888; padding:10px; box-sizing:border-box;}
-  p{color:red;}
-  button{display:block; width:200px; height:40px; line-height: 40px; margin:0 auto; border:none; background-color:lightskyblue; color:#fff; font-size:16px; margin-bottom:5px;}
+  .login_box a{
 
+    display: block;
 
+    width: 100%;
+
+    height: 100%;
+
+    line-height: 50px;
+
+    text-align: center;
+
+    color: deepskyblue;
+
+  }
+  .register_box{margin-top: 40px}
 </style>

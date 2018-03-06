@@ -7,17 +7,20 @@ import App from '../App'
 import register from 'components/register/register'
 import car from 'components/car/car'
 Vue.use(Router)
-
+Router.prototype.goBack = function () {
+  this.isBack = true
+  window.history.go(-1)
+}
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   redirect: 'home'
-    // },
-    // {
-    //   path: '/home',
-    //   component: home
-    // },
+    {
+      path: '/',
+      redirect: 'home'
+    },
+    {
+      path: '/home',
+      component: home
+    },
     {
       path: '/logon',
       name:'logon',
@@ -28,11 +31,11 @@ export default new Router({
       name:'register',
       component: register
     },
-    // {
-    //   path: '/car',
-    //   name:'car',
-    //   component: car
-    // }
+    {
+      path: '/car',
+      name:'car',
+      component: car
+    }
     ],
   mode:"history"
   })
