@@ -3,7 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/logistics/src/svg/list view.svg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/logistics/src/svg/个人.svg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/logistics/src/svg/寄件_激活.svg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/logistics/src/svg/搜索.svg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/logistics/src/svg/收件.svg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/logistics/src/svg/首页.svg" charset="GBK" />
   </component>
 </project>

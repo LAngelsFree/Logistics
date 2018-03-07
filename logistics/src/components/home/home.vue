@@ -6,7 +6,7 @@
         <span  class="">当前选择城市</span>
         <span  class="right fs0-8 col9f">定位不准时，请在城市列表选择</span>
       </div>
-      <mt-cell  title="大连" class="col after" to=""  is-link  value=""></mt-cell>
+      <mt-cell  title="大连" class="col after" to="/msite"  is-link  value=""></mt-cell>
 
       <div class="mgtop10 bgfff">
         <mt-cell class="after" title="热门城市"></mt-cell>

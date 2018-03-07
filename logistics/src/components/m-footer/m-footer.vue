@@ -25,9 +25,7 @@
 <script>
     export default {
         name: "m-footer",
-        mounted:{
 
-        },
         computed:{
           gopage: function(){
             return this.$store.state.selected
