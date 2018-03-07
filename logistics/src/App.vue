@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <m-header></m-header>
-    <home></home>
-     <transition  :name="transitionName">
-       <router-view class="Router"></router-view>
-     </transition>
-
+    <!--<m-header></m-header>-->
+    <!--<home></home>-->
+     <!--<transition  :name="transitionName">-->
+       <!--<router-view class="Router"></router-view>-->
+     <!--</transition>-->
+    <router-view></router-view>
 
 
     <!--<register></register>-->
@@ -18,8 +18,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import MHeader from 'components/m-header/m-header'
-  import Home from 'components/home/home'
+  // import MHeader from 'components/m-header/m-header'
+  // import Home from 'components/home/home'
   // import Register from 'components/register/register'
 export default {
   name: 'App',
@@ -43,7 +43,7 @@ export default {
 
   components: {
 
-    MHeader,
+    // MHeader,
     // Home
     // Register
   }

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <m-header></m-header>
     <div class="padtop40 bgf5">
       <div class="ih50 padlr10 box bgfff">
         <span  class="">当前选择城市</span>
@@ -26,8 +27,8 @@
   </div>
 </template>
 
-<script>
-
+<script  type="text/ecmascript-6">
+  import MHeader from 'components/m-header/m-header'
   export default {
     data () {
       return {
@@ -35,23 +36,22 @@
         hotcity:""
       }
     },
-    component:{
-
+    components:{
+      MHeader
     },
     mounted:function(){
      this.$http.get('http://cangdu.org:8001/v1/cities?type=group').then(response => {
-        console.log(response);
-        console.log("aaaaaaa");
+        // console.log(response);
         this.citylist = response.data;
       }, response => {
-        console.log(response);
+        // console.log(response);
       });
 
       this.$http.get('http://cangdu.org:8001/v1/cities?type=hot').then(response => {
-        console.log(response);
+        // console.log(response);
         this.hotcity = response.data;
       }, response => {
-        console.log(response);
+        // console.log(response);
       });
     },
     computed:{

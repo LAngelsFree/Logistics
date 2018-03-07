@@ -31,6 +31,12 @@ router.post('/userLogin', (req, res) => {
     }
     else{
       if(result.length > 0){
+        res.cookie("username",result.username,{
+          path:'/',
+          maxAge:1000*60*60
+        });
+        // req.session.user = result;
+
         res.json({
           status:'0',
           msg: '',

@@ -1,7 +1,7 @@
 <template>
   <div class="m-header">
     <div class="icon"></div>
-    <h1 class="text">大连市</h1>
+    <h1 class="text">深藏Blue物流管理</h1>
     <router-link tag="div" class="mine" to="/logon">
       <i class="icon-mine"></i>
     </router-link>
@@ -22,6 +22,7 @@
     text-align: center
     color: $color-header-theme
     background-color: $color-header-background
+    border-bottom:1px solid #dcdfe6;color: #909399
     font-size: 0
     .icon
       display: inline-block

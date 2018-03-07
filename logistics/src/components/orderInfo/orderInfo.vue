@@ -3,7 +3,7 @@
     <div class="d3">
       <div style="font-size:10px;">订单号：123456789123&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp下单时间：2018年1月1日4：17PM</div>
       <div>
-        <center><img style="margin-bottom:-35px;margin-left:10px;" src="../../assets/jiantou.png" height="20" width="170"/></center>
+        <!--<center><img style="margin-bottom:-35px;margin-left:10px;" src="../../assets/jiantou.png" height="20" width="170"/></center>-->
       </div>
       <div>
         <div style="margin-left: 20px;margin-bottom:10px;">大连市</div>
@@ -27,14 +27,32 @@
     </div>
     </div>
 
-
+    <m-footer></m-footer>
   </div>
 
 </template>
 
-<script>
+<script type="text/ecmascript-6">
+  import MFooter from 'components/m-footer/m-footer'
     export default {
-        name: "order-info"
+        name: "orderInfo",
+
+      components:{
+        MFooter
+      },
+      mounted:{
+
+      },
+      computed:{
+
+      },
+      methods:{
+
+      },
+      watch:{
+
+      }
+
     }
 </script>
 

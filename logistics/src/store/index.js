@@ -6,7 +6,9 @@ import getters from './getters'
 
 Vue.use(Vuex)
 
-const state = {}
+const state = {
+  selected:"msite"
+}
 
 
 export default new Vuex.Store({
