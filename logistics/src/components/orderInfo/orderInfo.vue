@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="d3">
-      <div style="font-size:10px;">订单号：123456789123&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp下单时间：2018年1月1日4：17PM</div>
+      <div style="font-size:10px;">订单号：<span v-model="orderNo">this.orderNo</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp下单时间：2018年1月1日4：17PM</div>
       <div>
         <!--<center><img style="margin-bottom:-35px;margin-left:10px;" src="../../assets/jiantou.png" height="20" width="170"/></center>-->
       </div>
@@ -26,7 +26,7 @@
       <button>查看物流</button>
     </div>
     </div>
-
+<button @click="selectOrderInfo">查询</button>
     <m-footer></m-footer>
   </div>
 
@@ -34,8 +34,13 @@
 
 <script type="text/ecmascript-6">
   import MFooter from 'components/m-footer/m-footer'
+  import axios from 'axios'
     export default {
-        name: "orderInfo",
+        data(){
+          return{
+            orderNo:''
+          }
+        },
 
       components:{
         MFooter
@@ -47,6 +52,23 @@
 
       },
       methods:{
+        selectOrderInfo:function(){
+
+          var orderNo = this.orderNo;
+          alert(this.orderNo)
+          this.$http.post('/api/user/orderInfo',{
+            orderNo:orderNo
+          },{}).then((response)=>{
+            let res = response.data;
+            if(res.status == '0'){
+              console.log("11111")
+            } else {
+              console.log("22222")
+            }
+            console.log(response);
+          })
+
+        }
 
       },
       watch:{
@@ -77,4 +99,4 @@
   }
   #b{margin-top:-100px;margin-left:230px;}
 
-</style>s
+</style>
